@@ -1,0 +1,58 @@
+import random
+
+class Node(object):
+
+    def __init__(self, data=None):
+        self.data = data
+        self.left_node = None
+        self.right_node = None
+
+
+class BinaryTree(object):
+
+    def __init__(self, data = None):
+        self.root = Node(data) if data else data
+        self.size = 0
+
+    def insert(self, data):
+        if self.root:
+            current_node = self.root
+            while True:
+                if data < current_node.data:
+                   if current_node.left_node is None:
+                        current_node.left_node = Node(data)
+                        break
+                   else:
+                       current_node = current_node.left_node
+
+                elif data > current_node.data:
+                    if current_node.right_node is None:
+                        current_node.right_node = Node(data)
+                        break
+                    else:
+                        current_node = current_node.right_node
+        else:
+            self.root = Node(data)
+
+    # A utility function to search a given key in BST
+    def search(self, key):
+        current_node = self.root
+        while True:
+            if current_node is None or current_node.data == key:
+                return current_node
+
+            if current_node.data < key:
+                current_node = current_node.right_node
+                continue
+
+            current_node = current_node.left_node
+
+tmp = BinaryTree()
+
+for i in range(5):
+    tmp.insert(random.randint(1,100))
+
+tmp.insert(5)
+
+tmp.search(5)
+tmp.search(0)
