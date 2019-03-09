@@ -17,15 +17,14 @@ def isPrime(n):
 
 
 def isPrimeFast(n):
-    bRet = True
     if n < 2:
-        bRet = False
+        return False
 
     for i in range(2, int(n ** 0.5)+1, 2):
         if n % i == 0:
-            bRet = False
+            return False
             break
-    return bRet
+    return True
 
 
 print("{},{}".format(1, isPrime(1)))
