@@ -28,9 +28,10 @@ def fib_dynamic(n) -> int:
     return 0
 
 
-random.seed(datetime.datetime.now())
-for i in range(5):
-    t = random.randint(0, 15)
-    print(f"fib_r:{t},{fib(t)}")
-    print(f"fib_d:{t},{fib_dynamic(t)}")
-    print("-" * 10)
+if __name__ == '__main__':
+    random.seed(datetime.datetime.now())
+    for i in range(5):
+        t = random.randint(0, 15)
+        print(f"fib_r:{t},{fib(t)}")
+        print(f"fib_d:{t},{fib_dynamic(t)}")
+        print("-" * 10)

@@ -13,18 +13,22 @@
 list_val = [1, 2, 3, 4, 5]
 list_val_2 = [3, 2, 1]
 
+
 def multi_array(arr):
     multi_sum = 1
     for val in arr:
         multi_sum = multi_sum * val
     return multi_sum
 
+
 def solution_1(arr):
     new_arr = []
     for idx, val in enumerate(arr):
-         tmp_arr = arr[idx+1:] + arr[:idx]
-         new_arr.append(multi_array(tmp_arr))
+        tmp_arr = arr[idx + 1:] + arr[:idx]
+        new_arr.append(multi_array(tmp_arr))
 
     return new_arr
 
-print(solution_1(list_val_2))
+
+if __name__ == '__main__':
+    print(solution_1(list_val_2))

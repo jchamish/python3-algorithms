@@ -11,16 +11,15 @@ def cons(a, b):
         return f(a, b)
     return pair
 
-def cons(a ,b):
-    def pair(f):
-        return f(a, b)
-    return pair
 
 def car(p):
     return p(min)
 
+
 def cdr(p):
     return p(max)
 
-print(car(cons(4,5)))
-print(cdr(cons(4,5)))
+
+if __name__ == '__main__':
+    print(car(cons(4, 5)))
+    print(cdr(cons(4, 5)))

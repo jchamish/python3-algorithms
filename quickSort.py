@@ -1,8 +1,8 @@
 import itertools
 
 def partition(arr, low, high):
-    i = (low - 1)  # index of smaller element
-    pivot = arr[high]  # pivot
+    i = (low - 1)
+    pivot = arr[high]
 
     for j in range(low, high):
         # If current element is smaller than or
@@ -29,9 +29,6 @@ def partition_2(array, low, high):
     return i + 1
 
 
-
-
-
 def quickSort(arr, low, high):
     if low < high:
         pi = partition(arr, low, high)
@@ -51,9 +48,6 @@ def isValid(s: str) -> bool:
         elif len(stack) > 0 and keys[stack[-1]] == char:
             stack.pop()
     return len(stack) == 0
-
-
-# test id 23280666885493
 
 
 class Node(object):
@@ -80,7 +74,6 @@ def bstDistance(num, values, node1, node2):
     print(
         type(node1_obj)
     )
-    # print(node2_obj)
     return -1
 
 
@@ -88,7 +81,6 @@ def bstInsert(root, node, depth):
     if root is None:
         root = node
     else:
-        # left have is great then right have of tree
         if root.val < node.val:
             if root.right is None:
                 node.depth = depth
@@ -113,11 +105,3 @@ def bstSearch(root, key):
 
     if root.val > key:
         return bstSearch(root.left, key)
-
-
-# bstDistance(6, [5,6,3,1,2,4], 2, 4)
-
-
-#return list(itertools.chain(*[[nums[idx + 1]] * nums[idx] for idx, freq in enumerate(nums[::2])]))
-
-# list(itertools.chain(*[ ]))

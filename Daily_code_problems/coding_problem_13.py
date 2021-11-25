@@ -24,4 +24,5 @@ def lcs(s, k):
     return m_len
 
 
-print(lcs("abcba", 2))
+if __name__ == "__main__":
+    print(lcs("abcba", 2))

@@ -1,8 +1,7 @@
-
-
 import re
 
-#A password is considered strong if below conditions are all met:
+
+# A password is considered strong if below conditions are all met:
 
 # 1) It has at least 6 characters and at most 20 characters.
 # 2) It must contain at least one lowercase letter, at least one uppercase letter, and at least one digit.
@@ -12,31 +11,32 @@ import re
 # Insertion, deletion or replace of any one character are all considered as one change.
 
 def strongPw(s):
-    iRet = 0
+    i_ret: int = 0
 
     # contains 1 digit
     if re.search(r'\d', s, re.MULTILINE) is None:
-        iRet += 1
+        i_ret += 1
 
     # upper case
     if re.search(r'[A-Z]+', s) is None:
-        iRet += 1
+        i_ret += 1
 
     # lower case
     if re.search(r'[a-z]', s) is None:
-        iRet += 1
+        i_ret += 1
 
     tmp = re.search(r'([a-z]{3,}|[A-Z]{3,})', s)
-    if (tmp is not None):
-        iRet += len(tmp.group(1)) / 3
+    if tmp is not None:
+        i_ret += len(tmp.group(1)) / 3
 
-    if (len(s)+iRet) < 6:
-        iRet += 6 - (len(s)+iRet)
+    if (len(s) + i_ret) < 6:
+        i_ret += 6 - (len(s) + i_ret)
 
-    if (len(s)+iRet) > 20:
-        iRet = 20 - (len(s)+iRet)
+    if (len(s) + i_ret) > 20:
+        i_ret = 20 - (len(s) + i_ret)
 
-    return iRet
+    return i_ret
+
 
 def strongPasswordChecker(s):
     missing_type = 3
@@ -74,7 +74,7 @@ def strongPasswordChecker(s):
         change -= max(delete - one - 2 * two, 0) / 3
         return delete + max(missing_type, change)
 
-print(1 == strongPw('aaa123'))
-print(1 == strongPasswordChecker('aaa123'))
-# print(1 == strongPw('aA123'))
-# print(6 == strongPw(''))
+
+if __name__ == '__main__':
+    print(1 == strongPw('aaa123'))
+    print(1 == strongPasswordChecker('aaa123'))

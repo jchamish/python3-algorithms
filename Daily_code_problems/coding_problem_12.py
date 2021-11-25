@@ -16,9 +16,9 @@
 # What if, instead of being able to climb 1 or 2 steps at a time, you could climb any number from a set of positive
 # integers X? For example, if X = {1, 3, 5}, you could climb 1, 3, or 5 steps at a time.
 
-steps = [1,2]
+steps = [1, 2]
 
-def staircase(n, steps = ()):
+def staircase(n, steps=[]):
     if n == 0:
         return 1
 
@@ -26,11 +26,11 @@ def staircase(n, steps = ()):
     if not choices:
         return 0
 
-
     count = 0
     for c in choices:
         count += staircase(n - c, steps)
 
     return count
 
-print(staircase(4, [1,2]))
+if __name__ == '__main__':
+    print(staircase(4, [1, 2]))

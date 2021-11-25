@@ -7,12 +7,15 @@
 import time
 from threading import Thread
 
+
 def delayed_execution(f, ms):
     time.sleep(ms)
     return f()
 
+
 def hello(name):
     print('Does it work {}'.format(name))
+
 
 job = Thread(target=delayed_execution, args=(lambda: hello('Test'), 1.0))
 job.start()

@@ -10,20 +10,20 @@
 from bisect import bisect_left as bisect
 
 
-def coding_problem_11(str, set):
+def coding_problem_11(str_input: str, set: str):
     tmp_arr = []
     for val in set:
-        if len(str) > len(val):
+        if len(str_input) > len(val):
             continue
         else:
-            if str == val[:len(str)]:
+            if str_input == val[:len(str_input)]:
                 tmp_arr.append(val)
 
     return tmp_arr
 
 # found online but don't work
-def coding_problem_11_p2(str, set):
-    dictionary = [s.lower() for s in sorted(str)]
+def coding_problem_11_p2(string, set):
+    dictionary = [s.lower() for s in sorted(string)]
     next_prefix = set + 'a' if set[-1] == 'z' else set[:-1] + chr(ord(set[-1]) + 1)
     return dictionary[set(dictionary, set):bisect(dictionary, next_prefix)]
 

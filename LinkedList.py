@@ -1,10 +1,12 @@
 import random
 
+
 class Node(object):
 
     def __init__(self, data=None):
         self.data = data
         self.next_node = None
+
 
 class LinkedList(object):
     def __init__(self):
@@ -28,7 +30,7 @@ class LinkedList(object):
     def delete(self, data):
         current_node = self.head
         previous_node = None
-        while current_node != None:
+        while current_node is not None:
             if current_node.data == data:
                 previous_node.next_node = current_node.next_node
                 if current_node is self.tail:
@@ -39,12 +41,13 @@ class LinkedList(object):
                 current_node = current_node.next_node
         return None
 
+
 # Start Main Program
 if __name__ == "__main__":
     linkedList = LinkedList()
     # insert some random values
     for n in range(5):
-        linkedList.insert(random.randint(1,100))
+        linkedList.insert(random.randint(1, 100))
 
     linkedList.insert(5)
 

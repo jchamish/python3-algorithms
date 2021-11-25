@@ -12,7 +12,6 @@
 
 import random
 
-
 array_numbers = [10, 15, 3, 7]
 
 # N^2
